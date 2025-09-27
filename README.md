@@ -61,7 +61,7 @@ Swagger UI will be available at:
 | Method | Endpoint                | Description                                            |
 | :----- | :---------------------- | :----------------------------------------------------- |
 | `POST` | `/v1/workflows`         | Create a workflow template                             |
-| `POST` | `/v1/workflows/{id}`    | get a workflow template                             |
+| `get` | `/v1/workflows/{id}`     | get a workflow template                                |
 | `POST` | `/v1/processes/start`   | Start a new process from a workflow                    |
 | `POST` | `/v1/processes/execute` | Execute the active step in a process (with validation) |
 | `GET`  | `/v1/processes`         | Query processes (filter by workflow, status, user)     |
