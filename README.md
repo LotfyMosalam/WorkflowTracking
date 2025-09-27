@@ -86,16 +86,9 @@ The custom validation mechanism is implemented in `ProcessService` using `Simula
 Run unit tests:
 
 ```bash
-dotnet test tests/Workflow.Tests.Unit
+dotnet test 
 ```
 
-Tests confirm validation logic, failure logging, and process flow correctness.
-
+The project includes unit tests that verify both the controller endpoints and the core business logic.
 ---
-
-## 📄 7. Submission Notes
-
-* **DTOs** ensure clean API contracts (`WorkflowDto`, `ProcessDto`).
-* **Error Handling** maps domain exceptions to HTTP codes (`404`, `400`).
-* **Code Quality** follows .NET best practices: DI, async/await, layered design.
 
