@@ -17,9 +17,9 @@ The system is structured into four main layers, ensuring **separation of concern
 | Project                   | Layer          | Responsibility                                                                           | Key Components                                                                                 |
 | :------------------------ | :------------- | :--------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
 | `Workflow.Api`            | Presentation   | API Endpoints (Controllers), Configuration, and Dependency Injection (DI) setup.         | `WorkflowsController`, `ProcessesController`                                                   |
-| `Workflow.Application`    | Application    | Defines business contracts (Interfaces), Request/Response DTOs, and business exceptions. | `IWorkflowService`, `IProcessService`, `CreateWorkflowDto`, `ProcessDto`                       |
-| `Workflow.Infrastructure` | Infrastructure | EF Core persistence, external validation simulation, service implementations.            | `WorkflowDbContext` `ProcessRepository` |
-| `Workflow.Core`           | Domain         | Core business entities and logic, dependency-free.                                       | `Workflow`, `Process`, Enums (`ActionType`, `ProcessStatus`)                                   |
+| `Workflow.Application`    | Application    | Defines business contracts (Interfaces), Request/Response DTOs, service implementations and business exceptions. | `IWorkflowService`, `IProcessService`, `CreateWorkflowDto`, `ProcessDto`                       |
+| `Workflow.Infrastructure` | Infrastructure | EF Core persistence, external validation simulation.            | `WorkflowDbContext` `ProcessRepository` |
+| `Workflow.Core`           | Core         | Core business entities and logic.                                       | `Workflow`, `Process`, Enums (`ActionType`, `ProcessStatus`)                                   |
 | `Workflow.Tests.Unit`     | Testing        | Unit tests for Api Controllers.                                     | `ProcessesControllerTests, WorkflowsControllerTests`                                                                          |
 
 ---
