@@ -18,7 +18,7 @@ The system is structured into four main layers, ensuring **separation of concern
 | :------------------------ | :------------- | :--------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
 | `Workflow.Api`            | Presentation   | API Endpoints (Controllers), Configuration, and Dependency Injection (DI) setup.         | `WorkflowsController`, `ProcessesController`                                                   |
 | `Workflow.Application`    | Application    | Defines business contracts (Interfaces), Request/Response DTOs, service implementations and business exceptions. | `IWorkflowService`, `IProcessService`, `CreateWorkflowDto`, `ProcessDto`                       |
-| `Workflow.Infrastructure` | Infrastructure | EF Core persistence, external validation simulation.            | `WorkflowDbContext` `ProcessRepository` |
+| `Workflow.Infrastructure` | Infrastructure | EF Core persistence, external validation simulation.            | `WorkflowDbContext`, `ProcessRepository` |
 | `Workflow.Core`           | Core         | Core business entities and logic.                                       | `Workflow`, `Process`, Enums (`ActionType`, `ProcessStatus`)                                   |
 | `Workflow.Tests.Unit`     | Testing        | Unit tests for Api Controllers.                                     | `ProcessesControllerTests, WorkflowsControllerTests`                                                                          |
 
@@ -61,6 +61,7 @@ Swagger UI will be available at:
 | Method | Endpoint                | Description                                            |
 | :----- | :---------------------- | :----------------------------------------------------- |
 | `POST` | `/v1/workflows`         | Create a workflow template                             |
+| `POST` | `/v1/workflows/{id}`    | get a workflow template                             |
 | `POST` | `/v1/processes/start`   | Start a new process from a workflow                    |
 | `POST` | `/v1/processes/execute` | Execute the active step in a process (with validation) |
 | `GET`  | `/v1/processes`         | Query processes (filter by workflow, status, user)     |
