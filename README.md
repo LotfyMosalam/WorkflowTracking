@@ -20,7 +20,7 @@ The system is structured into four main layers, ensuring **separation of concern
 | `Workflow.Application`    | Application    | Defines business contracts (Interfaces), Request/Response DTOs, and business exceptions. | `IWorkflowService`, `IProcessService`, `CreateWorkflowDto`, `ProcessDto`                       |
 | `Workflow.Infrastructure` | Infrastructure | EF Core persistence, external validation simulation, service implementations.            | `WorkflowDbContext` `ProcessRepository` |
 | `Workflow.Core`           | Domain         | Core business entities and logic, dependency-free.                                       | `Workflow`, `Process`, Enums (`ActionType`, `ProcessStatus`)                                   |
-| `Workflow.Tests.Unit`     | Testing        | Unit tests for core logic (Moq + EF Core In-Memory).                                     | `ProcessesControllerTests, WorkflowsControllerTests`                                                                          |
+| `Workflow.Tests.Unit`     | Testing        | Unit tests for Api Controllers.                                     | `ProcessesControllerTests, WorkflowsControllerTests`                                                                          |
 
 ---
 
