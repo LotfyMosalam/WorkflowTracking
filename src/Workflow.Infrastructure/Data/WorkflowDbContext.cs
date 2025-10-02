@@ -34,7 +34,7 @@ public class WorkflowDbContext : DbContext
             b.HasKey(s => s.Id);
             b.Property(s => s.StepName).IsRequired().HasMaxLength(200);
             b.Property(s => s.AssignedTo).IsRequired().HasMaxLength(100);
-            b.Property<int>("Order"); // mapped via property
+            b.Property<int>("Order");    // Shadow Property
         });
 
         modelBuilder.Entity<Process>(b =>
